@@ -37,4 +37,45 @@ export class Persoon {
     }
     return totalDays;
   }
+
+  getAge() {
+    const date_1 = new Date(this.#geboortedatum);
+    const date_2 = new Date();
+
+    return date_2.getFullYear() - date_1.getFullYear();
+  }
+
+  getHtmlString() {
+    if (this.#tag) {
+      return `<div class="card" id="${this.#naam.toLowerCase()}">
+      <div class="card-title">
+        <div class="card-title-wrapper">
+          <span class="person-name">${this.#naam.toUpperCase()}</span>
+               <span class="tag" data-tag="${this.#tag}">${this.getTageDisplay(
+        this.#tag
+      )}</span>
+              
+        </div>
+        <span class="birthdate">${this.#geboortedatum}</span>
+      </div>
+      <div class="card-body">${this.getAge()}th birthday in ${this.getDaysUntillBirthday()} days!</div>
+    </div>`;
+    } else {
+      return `<div class="card" id="${this.#naam.toLowerCase()}">
+      <div class="card-title">
+        <div class="card-title-wrapper">
+          <span class="person-name">${this.#naam.toUpperCase()}</span>
+               
+        </div>
+        <span class="birthdate">${this.#geboortedatum}</span>
+      </div>
+      <div class="card-body">${this.getAge()}th birthday in ${this.getDaysUntillBirthday()} days!</div>
+    </div>`;
+    }
+  }
+
+  getTageDisplay(string) {
+    let s = string.toLowerCase();
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
 }
