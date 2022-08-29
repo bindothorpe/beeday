@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beeday</title>
+    <title>BeeDay</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="./css/main.css" />
   </head>
@@ -13,7 +13,7 @@
       <div id="title">
         <h1><span>Bee</span>Day</h1>
       </div>
-      <div id="controlls">
+      <div id="controlls" class="">
         <div></div>
         <select name="tag" id="tagSelect">
           <option value="">---</option>
@@ -21,13 +21,44 @@
           <option value="lover">Lover</option>
           <option value="family">Family</option>
         </select>
+
+        <div class="circle-btn btn" id="add_btn"></div>
       </div>
-      <div id="just">
-        <div id="cards"></div>
-        <div id="add_btn"><div class="btn"></div></div>
+      <div class="just">
+        <div id="cards">
+          <div class="person-card">
+            <div class="person-card-title">
+              <span class="person-name">Naam</span>
+              <select name="tag" id="tagSelect">
+                <option value="">---</option>
+                <option value="friend">Friend</option>
+                <option value="lover">Lover</option>
+                <option value="family" selected>Family</option>
+              </select>
+            </div>
+            <div class="person-card-body">
+              <div>
+                <label for="date">Geboortedag:</label>
+                <input
+                  type="date"
+                  name="date"
+                  id="date_select"
+                  value="2001-10-07"
+                />
+              </div>
+
+              <div class="just">
+                <input type="button" value="1" /><input
+                  type="button"
+                  value="1"
+                /><input type="button" value="1" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <script src="./js/app.js" type="module"></script>
+    <!-- <script src="./js/app.js" type="module"></script> -->
   </body>
 </html>

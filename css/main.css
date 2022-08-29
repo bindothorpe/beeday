@@ -1,5 +1,8 @@
 :root {
   --card-background: rgb(230, 230, 230);
+  --card-background-highlight: rgb(238, 238, 238);
+  --btn-gray-default: rgb(129, 145, 156);
+  --btn-gray-highlight: rgb(162, 184, 199);
   --tag-friend: rgb(255, 210, 7);
   --tag-family: rgb(108, 196, 255);
   --tag-lover: rgb(255, 100, 100);
@@ -20,14 +23,20 @@ h1 span {
 }
 
 #container {
-  width: 330px;
-  /* background-color: wheat; */
+  width: 20.6em;
+  background-color: wheat;
   margin-left: auto;
   margin-right: auto;
 }
 
-#just {
+.just {
   display: flex;
+  justify-content: space-around;
+}
+
+.just-vert {
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
 }
 
@@ -37,21 +46,26 @@ h1 span {
 }
 
 #tagSelect {
-  padding: 2px 5px 2px 5px;
-  border-radius: 5px;
+  padding: 0.125em 0.3125em 0.125em 0.3125em;
+  border-radius: 0.3125em;
 }
 
 .card {
   background-color: var(--card-background);
-  width: 300px;
-  height: 70px;
-  padding: 10px 15px 10px 15px;
-  border-radius: 10px;
-  margin: 10px;
+  width: 18.75em;
+  height: 4.3em;
+  padding: 0.625em 0.9375em 0.625em 0.9375em;
+  border-radius: 0.625em;
+  margin: 0.625em;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.card:hover {
+  background-color: var(--card-background-highlight);
+  cursor: pointer;
 }
 
 .card-title {
@@ -64,9 +78,8 @@ h1 span {
 }
 
 .tag {
-  background-color: var(--tag-friend);
-  padding: 2px 8px 2px 8px;
-  border-radius: 10px;
+  padding: 0.125em 0.5em 0.125em 0.5em;
+  border-radius: 0.625em;
 }
 
 .tag[data-tag="friend"] {
@@ -83,10 +96,101 @@ h1 span {
 
 .card-body {
   text-align: center;
-  font-size: x-large;
-  padding: 10px;
+  font-size: large;
+  padding: 0.625em;
 }
 
 .person-name {
   font-weight: bold;
+}
+
+.btn {
+  background-color: var(--card-background);
+  margin: 10px;
+  font-weight: bold;
+}
+
+.circle-btn {
+  bottom: 1.25em;
+  right: 1.25em;
+  position: fixed;
+  width: 4em;
+  height: 4em;
+  border-radius: 10em;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: var(--card-background-highlight);
+}
+
+.btn-grey {
+  background-color: white;
+  color: var(--btn-gray-default);
+  border: 3px solid var(--btn-gray-default) !important;
+}
+
+.btn-grey:hover {
+  color: white;
+  background-color: var(--btn-gray-default);
+}
+
+.btn-yellow {
+  color: white;
+  background-color: var(--tag-friend);
+  border: 3px solid var(--tag-friend) !important;
+}
+
+.btn-yellow:hover {
+  color: var(--tag-friend);
+  background-color: white;
+}
+
+.hide-add-menu {
+  display: none !important;
+}
+
+.menu-card {
+  padding: 0.625em 0.9375em 0.625em 0.9375em;
+  border-radius: 0.625em;
+  margin: 0.625em;
+  background-color: var(--card-background);
+  width: 300px;
+}
+
+.menu-title {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.menu-body input,
+.menu-body select {
+  width: 140px;
+  padding: 6px;
+  border-radius: 5px;
+  stroke: none;
+  border: none;
+  margin-bottom: 4px;
+}
+
+.menu-body select {
+  width: 152px;
+}
+
+.menu-body label {
+  float: right;
+  margin-right: 5px;
+}
+
+.menu-body tr td:nth-child(1) {
+  width: 120px;
+}
+
+.person-card {
+  padding: 0.625em 0.9375em 0.625em 0.9375em;
+  border-radius: 0.625em;
+  margin: 0.625em;
+  background-color: var(--card-background);
+  width: 300px;
 }

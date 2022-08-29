@@ -8,7 +8,11 @@ export class Persoon {
   constructor(naam, tag, geboortedatum) {
     this.#naam = naam;
     this.#tag = tag;
-    this.#geboortedatum = geboortedatum;
+    if (geboortedatum.includes("-")) {
+      this.#geboortedatum = geboortedatum.split("-").reverse().join("/");
+    } else {
+      this.#geboortedatum = geboortedatum;
+    }
   }
 
   get naam() {
@@ -46,7 +50,11 @@ export class Persoon {
   }
 
   getHtmlString() {
-    if (this.#tag) {
+    if (
+      this.#tag.toLowerCase() === "family" ||
+      this.#tag.toLowerCase() === "lover" ||
+      this.#tag.toLowerCase() === "friend"
+    ) {
       return `<div class="card" id="${this.#naam.toLowerCase()}">
       <div class="card-title">
         <div class="card-title-wrapper">
